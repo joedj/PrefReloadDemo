@@ -13,6 +13,7 @@
 }
 
 - (void)applyState:(FSSwitchState)newState forSwitchIdentifier:(NSString *)switchIdentifier {
+    _state = !_state;
     notify_post("net.joedj.prefsreloaddemo/toggle");
 }
 
