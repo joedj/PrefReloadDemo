@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>net.joedj.prefsreloaddemo.switch</string>
+    <key>CFBundleDisplayName</key>
+    <string>PrefsReloadDemo</string>
+    <key>CFBundleExecutable</key>
+    <string>PrefsReloadDemoSwitch</string>
+    <key>NSPrincipalClass</key>
+    <string>PrefsReloadDemoSwitch</string>
+    <key>alternate-action-url</key>
+    <string>prefs:root=PrefsReloadDemo</string>
+    <key>lazy-load</key>
+    <true/>
+</dict>
+</plist>

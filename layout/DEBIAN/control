@@ -1,0 +1,9 @@
+Package: net.joedj.prefsreloaddemo
+Name: PrefsReloadDemo
+Depends: firmware (>= 6.0), mobilesubstrate, com.a3tweaks.flipswitch, applist, libactivator, preferenceloader
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Demo prefs reloading issues
+Maintainer: joedj
+Author: joedj
+Section: Addons (Flipswitch)

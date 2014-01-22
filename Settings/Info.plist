@@ -1,0 +1,13 @@
+{
+    CFBundleDevelopmentRegion = English;
+    CFBundleExecutable = PrefsReloadDemoSettings;
+    CFBundleIdentifier = "net.joedj.prefsreloaddemo.settings";
+    CFBundleInfoDictionaryVersion = "6.0";
+    CFBundlePackageType = BNDL;
+    CFBundleShortVersionString = "1.0.0";
+    CFBundleSignature = "????";
+    CFBundleVersion = "1.0";
+    DTPlatformName = iphoneos;
+    MinimumOSVersion = "4.3";
+    NSPrincipalClass = PrefsReloadDemoSettingsController;
+}

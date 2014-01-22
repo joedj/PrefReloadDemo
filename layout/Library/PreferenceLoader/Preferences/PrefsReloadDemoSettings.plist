@@ -1,0 +1,9 @@
+{
+    entry = {
+        bundle = PrefsReloadDemoSettings;
+        cell = PSLinkCell;
+        detail = PrefsReloadDemoSettingsController;
+        isController = 1;
+        label = PrefsReloadDemo;
+    };
+}
