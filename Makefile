@@ -13,7 +13,6 @@ BUNDLE_NAME = PrefsReloadDemoSettings PrefsReloadDemoSwitch
 
 PrefsReloadDemoSettings_BUNDLE_RESOURCE_DIRS = Settings
 PrefsReloadDemoSettings_FILES = Settings.m
-PrefsReloadDemoSettings_LIBRARIES = applist
 PrefsReloadDemoSettings_PRIVATE_FRAMEWORKS = Preferences
 PrefsReloadDemoSettings_INSTALL_PATH = /Library/PreferenceBundles
 

@@ -1,5 +1,3 @@
-#import <AppList/AppList.h>
-#import <notify.h>
 #import <Preferences/Preferences.h>
 
 static BOOL state = NO;
