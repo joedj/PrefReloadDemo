@@ -35,10 +35,12 @@ static void toggle(CFNotificationCenterRef center, void *observer, CFStringRef n
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    if (_needsReload && _specifiers) {
-        NSLog(@"PrefsReloadDemoSettings: Performing scheduled reloadSpecifiers!");
+    if (_needsReload) {
         _needsReload = NO;
-        [self reloadSpecifiers];
+        if (_specifiers) {
+            NSLog(@"PrefsReloadDemoSettings: Performing scheduled reloadSpecifiers!");
+            [self reloadSpecifiers];
+        }
     }
     [super viewWillAppear:animated];
 }
