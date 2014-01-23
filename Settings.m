@@ -7,13 +7,14 @@ static BOOL state = NO;
 
 @implementation PrefsReloadDemoSettingsController {
     BOOL _listening;
+    BOOL _needsReload;
 }
 
 static void toggle(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
     PrefsReloadDemoSettingsController *controller = (__bridge PrefsReloadDemoSettingsController *)observer;
     dispatch_async(dispatch_get_main_queue(), ^{
         state = !state;
-        [controller reloadSpecifiers];
+        [controller scheduleReload];
     });
 }
 
@@ -21,6 +22,25 @@ static void toggle(CFNotificationCenterRef center, void *observer, CFStringRef n
     if (_listening) {
         CFNotificationCenterRemoveObserver(CFNotificationCenterGetDarwinNotifyCenter(), (__bridge void *)self, CFSTR("net.joedj.prefsreloaddemo/toggle"), NULL);
     }
+}
+
+- (void)scheduleReload {
+    if (self.isViewLoaded && self.view.window) {
+        NSLog(@"PrefsReloadDemoSettings: Reloading specifiers NOW!");
+        [self reloadSpecifiers];
+    } else {
+        NSLog(@"PrefsReloadDemoSettings: Scheduling specifier reload for later...");
+        _needsReload = YES;
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if (_needsReload && _specifiers) {
+        NSLog(@"PrefsReloadDemoSettings: Performing scheduled reloadSpecifiers!");
+        _needsReload = NO;
+        [self reloadSpecifiers];
+    }
+    [super viewWillAppear:animated];
 }
 
 - (NSArray *)specifiers {
